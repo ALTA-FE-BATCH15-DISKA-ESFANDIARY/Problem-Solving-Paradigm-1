@@ -1,6 +1,6 @@
 function dragonOfLoowater(dragonHead: number[], knightHead: number[]): number | string {
-    dragonHead.sort((a, b) => b - a);
-    knightHead.sort((a, b) => b - a);
+    dragonHead.sort((a, b) => a - b); 
+    knightHead.sort((a, b) => a - b); 
   
     let diameterD = 0;
     let diameterK = 0;
@@ -8,7 +8,7 @@ function dragonOfLoowater(dragonHead: number[], knightHead: number[]): number | 
   
     while (diameterD < dragonHead.length && diameterK < knightHead.length) {
       if (knightHead[diameterK] >= dragonHead[diameterD]) {
-        totalDiameter += dragonHead[diameterD];
+        totalDiameter += knightHead[diameterK]; 
         diameterD++;
         diameterK++;
       } else {
@@ -27,10 +27,10 @@ function dragonOfLoowater(dragonHead: number[], knightHead: number[]): number | 
   console.log(test1);  
   
   const test2 = dragonOfLoowater([5, 10], [5]);
-  console.log(test2); 
+  console.log(test2);  
   
   const test3 = dragonOfLoowater([7, 2], [4, 3, 1, 2]);
-  console.log(test3); 
+  console.log(test3);  
   
   const test4 = dragonOfLoowater([7, 2], [2, 1, 8, 5]);
   console.log(test4);  
